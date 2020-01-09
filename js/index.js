@@ -26,9 +26,7 @@ define([
     { moreInput },
     { isLogin },
 ) {
-
-    //搜索框下拉菜单
-    // moreInput();
+    
 
     //判断是否登陆
     isLogin();
