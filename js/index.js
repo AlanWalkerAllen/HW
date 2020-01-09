@@ -10,23 +10,28 @@ define([
     './modules/goods',
     './modules/nav',
     './modules/input',
+    './modules/isLogin',
 
 ], function (
     $,
     { getBannerData, getAdvData, getHotData, getHotItemData, getRecommendationData, getcenAdvData, getGoodsData, getNavsData },
     { bannerInit },
     { advInit },
-    {moreBrill},
+    { moreBrill },
     { hotInit },
     { RecommendationInit, SwiperInit },
     { cenAdvInit },
     { goodsInit },
     { navInit },
     { moreInput },
+    { isLogin },
 ) {
 
     //搜索框下拉菜单
     // moreInput();
+
+    //判断是否登陆
+    isLogin();
 
     //banner数据操作
     getBannerData().then(function (res) {

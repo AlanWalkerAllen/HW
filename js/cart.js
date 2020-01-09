@@ -1,4 +1,6 @@
-define(['jquery' , './modules/cartStorage' , './modules/down_list' ],function($ , { setCartStorage , getCartStorage } , { moreBrill }){
+define(['jquery' , './modules/cartStorage' , './modules/down_list' ,'./modules/isLogin' ],function($ , { setCartStorage , getCartStorage } , { moreBrill },{ isLogin }){
+
+    isLogin();
 
     var $cart = $('#cart');
     var $cart_list = $cart.find('.cart_list');

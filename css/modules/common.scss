@@ -229,6 +229,10 @@ input{outline: none;}
         .header_right span:nth-of-type(3){
             left: 230px;
         }
+        /*个人信息和注销*/
+        .header_right li.person,.header_right li.exit{
+            display: none;
+        }
 
         /*这里是客户服务样式*/
         .header_right li.service{

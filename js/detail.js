@@ -3,11 +3,13 @@ define([
     '../server/main' , 
     './modules/cartStorage' ,
     './modules/down_list' ,
+    './modules/isLogin',
 ],function(
     $ , 
     { getDetailData } , 
     { addCartStorage } ,
-    { moreBrill }
+    { moreBrill },
+    { isLogin }
     ){
 
    var type = window.location.search.match(/type=([^&]+)/)[1];
@@ -16,6 +18,8 @@ define([
    var $detailGoods = $('#detailGoods');
 
    //console.log(type , id);
+
+    isLogin();
 
    getDetailData(type , id).then((res)=>{
         detailInit(res);
@@ -183,8 +187,19 @@ define([
    }
    //添加购物车
    function addCart(data){
+
       let $detail_message_cart = $detail.find('.detail_message_cart');
       $detail_message_cart.click(function(){
+
+          var msg = window.localStorage.getItem("userMsg") ? JSON.parse(window.localStorage.getItem("userMsg")) : [{ueser:"",pass:"",onoff:0}];
+          var on = msg.some((val)=>{
+              return val.onoff != 0;
+          })
+
+          if(!on){
+              alert("请先登录！");
+              return;
+          }
 
         let result = {
             goodsName : data.goodsName,
