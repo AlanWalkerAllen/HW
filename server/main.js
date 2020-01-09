@@ -50,10 +50,6 @@ define(['jquery'],function($){
 
     }
 
-    // function getNavData(){
-    //     return $.ajax(`../mock/navPhone.json`)
-    // }
-
     return {
         getBannerData,
         getAdvData,
